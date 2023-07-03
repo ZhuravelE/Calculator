@@ -10,7 +10,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        /*stage('Checkout') {
             steps {
                 // Checkout your source code from version control
                 // Replace the repository URL and credentials as per your setup
@@ -20,7 +20,7 @@ pipeline {
                     url: 'https://github.com/your-repo.git'
                 )
             }
-        }
+        }*/
 
         stage('Build') {
             steps {
