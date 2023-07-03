@@ -32,7 +32,7 @@ pipeline {
                     if (buildTool == 'Maven') {
                         sh 'mvn clean install'
                     } else if (buildTool == 'Gradle') {
-                        sh 'gradle clean build'
+                        sh 'gradlew clean build'
                     } else {
                         error "Invalid build tool selected: ${buildTool}"
                     }
