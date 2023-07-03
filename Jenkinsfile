@@ -30,7 +30,9 @@ pipeline {
 
                     // Execute the build command based on the selected build tool
                     if (buildTool == 'Maven') {
-                        sh 'mvn clean install'
+                        withMaven {
+                          sh "mvn clean install"
+                        }
                     } else if (buildTool == 'Gradle') {
                         sh 'gradlew clean build'
                     } else {
