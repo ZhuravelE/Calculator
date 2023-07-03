@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        maven '3.9.3'
+    }
     parameters {
         choice(
             choices: ['Maven', 'Gradle'],
@@ -8,7 +10,7 @@ pipeline {
             name: 'BUILD_TOOL'
         )
     }
-
+    
     stages {
         /*stage('Checkout') {
             steps {
@@ -30,9 +32,7 @@ pipeline {
 
                     // Execute the build command based on the selected build tool
                     if (buildTool == 'Maven') {
-                        withMaven {
-                          sh "mvn clean install"
-                        }
+                        sh "mvn clean install"
                     } else if (buildTool == 'Gradle') {
                         sh 'gradlew clean build'
                     } else {
