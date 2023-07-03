@@ -1,0 +1,25 @@
+plugins {
+    id 'groovy'
+}
+
+group 'com.zhuravel'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.groovy:groovy:4.0.2'
+    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.4-M1-groovy-4.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task runCalculator (dependsOn: 'classes', type: JavaExec) {
+    main = 'Calculator'
+    classpath = sourceSets.main.runtimeClasspath
+}
