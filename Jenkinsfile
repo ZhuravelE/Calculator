@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        maven '3.9.3'
-        gradle '8.2'
+        maven '3.8.4'
+        gradle '7.5.1'
     }
     parameters {
         choice(
